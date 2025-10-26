@@ -108,24 +108,48 @@ if(length(dogrudan_eslesme) < 20) {
   print(head(sort(unique(temporal_all_27$Isim_Clean)), 15))
   cat("\n")
 
-  # Manuel eşleştirme sözlüğü
-  # (Kullanıcı bunu güncelleyebilir)
+  # TAM Manuel eşleştirme sözlüğü (27 katılımcının TÜMÜ)
+  # Türkçe karakter farkları (İ/I, Ü/U) ve eksik soyadlar
   isim_eslestirme <- data.frame(
     OSS_Isim = c(
+      # Türkçe karakter farkları (İ → I)
+      "AYŞENUR ÖZISKENDER",
+      "SÜMEYYE DILMAÇ",
+      "BERRAK FAIZOĞLU",
+      "ESRA YIĞITER",
+      "IREM ADAR",
+      "SENA ÇETIN",
+      "ECRIN BALABAN",
+      "KERIM BULAGAY",
+      "BERKAY KARADENIZ",
+
+      # Eksik/fazla soyadlar
+      "FATMA ZEHRA ŞIMŞEKLIEL",
+      "IRMAK",
       "AYŞE MÜBERRA EROL",
       "CENK",
-      "IRMAK",
-      "TUBA ZEHRA ATEŞ",
-      "FATMA ZEHRA ŞIMŞEKLIEL",
-      "IREM ADAR"
+
+      # Ü → U farkı
+      "TUBA ZEHRA ATEŞ"
     ),
     Temporal_Isim = c(
+      # Temporal'deki karşılıkları
+      "AYŞENUR ÖZİSKENDER",
+      "SÜMEYYE DİLMAÇ",
+      "BERRAK FAİZOĞLU",
+      "ESRA YİĞİTER",
+      "İREM ADAR",
+      "SENA ÇETİN",
+      "ECRİN BALABAN",
+      "KERİM BULAGAY",
+      "BERKAY KARADENİZ",
+
+      "FATMA ZEHRA ŞİMŞEK",
+      "IRMAK KAYA",
       "AYŞE EROL",
       "CENK EREN KUZU",
-      "IRMAK KAYA",
-      "TUĞBA ZEHRA ATEŞ",
-      "FATMA ZEHRA ŞİMŞEK",
-      "İREM ADAR"
+
+      "TUĞBA ZEHRA ATEŞ"
     ),
     stringsAsFactors = FALSE
   )
